@@ -72343,7 +72343,6 @@ Body:
       }
       bonus5 bAutoSpell,"AL_HOLYLIGHT",1+.@val,10,BF_SHORT|BF_WEAPON,1;
       bonus5 bAutoSpell,"AL_HOLYLIGHT",1+.@val,5,BF_LONG|BF_WEAPON,1;
-
   - Id: 19218
     AegisName: Time_Keeper_Glasses
     Name: Time Keeper Glasses
@@ -72362,7 +72361,24 @@ Body:
       NoAuction: true
     Script: |
       bonus bMaxSP,50;
-
+  - Id: 19221
+    AegisName: Golden_Angel_Hairband
+    Name: Golden Angel Hairband
+    Type: Armor
+    Weight: 300
+    Defense: 10
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 1104
+    Script: |
+      .@r = getrefine();
+      if (readparam(bStr)>=70){ bonus bBaseAtk,5; if (.@r>=7){ bonus bBaseAtk,10; } }
+      if (readparam(bAgi)>=70){ bonus bAspdRate,2; if (.@r>=7){ bonus bAspdRate,3; } }
+      if (readparam(bVit)>=70){ bonus bMaxHPRate,2; bonus bMaxSPRate,2; if (.@r>=7){ bonus bMaxHPRate,3; bonus bMaxSPRate,3; } }
+      if (readparam(bInt)>=70){ bonus bMatk,5; if (.@r>=7){ bonus bMatk,10; } }
+      if (readparam(bDex)>=70){ bonus bLongAtkRate,2; if (.@r>=7){ bonus bLongAtkRate,3; } }
+      if (readparam(bLuk)>=70){ bonus bCritAtkRate,2; if (.@r>=7){ bonus bCritAtkRate,3; } }
   - Id: 19223
     AegisName: Illusion_Cap
     Name: Illusion Cap
@@ -72401,7 +72417,6 @@ Body:
     EquipLevelMin: 30
     Script: |
       autobonus "{ bonus bSpeedRate,25; }",50,5000,BF_NORMAL,"{ showscript \"Smokie-formation!\"; active_transform 1056,5000; /*SMOKIE*/ }";
-
   - Id: 19239
     AegisName: PoringTownCarrot
     Name: Poring Village Carrot
@@ -72414,7 +72429,6 @@ Body:
     EquipLevelMin: 30
     Script: |
       autobonus "{ bonus bSpeedRate,25; }",50,5000,BF_NORMAL,"{ showscript \"Lunatic-formation!\"; active_transform 1063,5000; /*LUNATIC*/ }";
-
   - Id: 19240
     AegisName: Toy_Syringe_K
     Name: Toy Syringe
@@ -72429,7 +72443,6 @@ Body:
     Script: |
       bonus2 bAddItemHealRate,11573,100;
       bonus2 bAddItemHealRate,547,100;
-
   - Id: 19241
     AegisName: Magical_Booster_K
     Name: Magical Booster
@@ -72467,7 +72480,6 @@ Body:
     Script: |
       bonus2 bDropAddClass,Class_All,5;
       bonus2 bExpAddClass,Class_All,5;
-
   - Id: 19244
     AegisName: Necklace_Rosary_K
     Name: Rosario Necklace
@@ -72480,7 +72492,6 @@ Body:
       Head_Low: true
     Script: |
       bonus bHealPower,5;
-
   - Id: 19245
     AegisName: Crimson_Booster
     Name: Crimson Booster
@@ -82783,7 +82794,13 @@ Body:
     View: 87
     Locations:
       Costume_Garment: true
-
+  - Id: 20606
+    AegisName: C_Angel_Wing
+    Name: Costume Angel Wing
+    Type: Armor
+    View: 55
+    Locations:
+      Costume_Garment: true
   - Id: 20700
     AegisName: Egir_Manteau
     Name: Egir Manteau
@@ -83284,6 +83301,19 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSubEle,Ele_Neutral,10; bonus bFlee,20; bonus bVariableCastrate,-10; .@r = getrefine(); if(.@r>=7) { bonus bVariableCastrate,-10; } if(.@r>=9) { bonus bVariableCastrate,-10;} if(.@r>=12) { bonus bVariableCastrate,-5; }
+  - Id: 20745
+    AegisName: Manteau_of_Mystic_Frozen
+    Name: Manteau of Mystic Frozen
+    Type: Armor
+    Weight: 300
+    Defense: 10
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 70
+    Refineable: true
+    Script: |
+      bonus2 bSubEle,Ele_Water,10; bonus2 bAddEle,Ele_Wind,10;
   - Id: 20746
     AegisName: C_Rudra_Wing
     Name: Costume Rudra Wings
@@ -83293,6 +83323,19 @@ Body:
       Costume_Garment: true
     EquipLevelMin: 1
     View: 8
+  - Id: 20747
+    AegisName: Manteau_of_Greaet_Nature
+    Name: Manteau of Greaet Nature
+    Type: Armor
+    Weight: 300
+    Defense: 10
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 70
+    Refineable: true
+    Script: |
+      bonus2 bSubEle,Ele_Earth,10; bonus2 bAddEle,Ele_Fire,10;
   - Id: 20748
     AegisName: Manteau_Of_Fallen
     Name: Fallen Warrior Manteau
@@ -83335,7 +83378,6 @@ Body:
     Script: |
       bonus2 bSubEle,Ele_Wind,5;
       bonus2 bSubRace,RC_Insect,-5;
-
   - Id: 20753
     AegisName: Lian_Robe
     Name: Lian Robe
@@ -84243,6 +84285,25 @@ Body:
     Refineable: true
     Script: |
       .@val = min(getrefine(),10)/2; bonus bAgi,(2+.@val);
+  - Id: 20841
+    AegisName: Golden_Angel_Wings
+    Name: Golden Angel Wings
+    Type: Armor
+    Weight: 100
+    Defense: 20
+    Slots: 1
+    Locations:
+      Garment: true
+    Refineable: true
+    View: 5
+    Script: |
+      .@r = getrefine();
+      if (readparam(bStr)>90){ bonus bBaseAtk,15; if (.@r>=9){ bonus bBaseAtk,15; } }
+      if (readparam(bAgi)>90){ bonus bAspd,1; if (.@r>=9){ bonus bAspd,1; } }
+      if (readparam(bVit)>90){ bonus bMaxHPRate,5; bonus bMaxSPRate,5; if (.@r>=9){ bonus bMaxHPRate,5; bonus bMaxSPRate,5; } }
+      if (readparam(bInt)>90){ bonus bMatk,15; if (.@r>=9){ bonus bMatk,15; } }
+      if (readparam(bDex)>90){ bonus bLongAtkRate,5; if (.@r>=9){ bonus bLongAtkRate,5; } }
+      if (readparam(bLuk)>90){ bonus bCritAtkRate,5; if (.@r>=9){ bonus bCritAtkRate,5; } }
   - Id: 20842
     AegisName: Bag_Of_Antonio_P
     Name: Candy Pouch Bag (Physical)
@@ -93384,7 +93445,6 @@ Body:
       else {
          bonus2 bAddSize,Size_All,3;
       }
-
   - Id: 24480
     AegisName: S_Skynetblow_Pendant
     Name: Sky Blow Shadow Pendant
@@ -93401,7 +93461,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillAtk,"SR_SKYNETBLOW",5+2*(getrefine()/2);
-
   - Id: 24481
     AegisName: S_Skynetblow_Earing
     Name: Sky Net Blow Shadow Earring
@@ -93418,7 +93477,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bAddClass,Class_All,2+(getrefine()/3);
-
   - Id: 24482
     AegisName: S_Knucklearrow_Armor
     Name: Knuckle Shadow Armor
@@ -93435,7 +93493,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillAtk,"SR_KNUCKLEARROW",5+2*(getrefine()/2);
-
   - Id: 24483
     AegisName: S_Knucklearrow_Shield
     Name: Knuckle Shadow Shield
@@ -93461,7 +93518,6 @@ Body:
       else {
          bonus bLongAtkRate,3;
       }
-
   - Id: 24484
     AegisName: S_Knucklearrow_Shoes
     Name: Knuckle Shadow Shoes
@@ -93478,7 +93534,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bAddSize,Size_All,3+2*(getrefine()/3);
-
   - Id: 24485
     AegisName: S_TigerCannon_Weapon
     Name: Tiger Shadow Weapon
@@ -93504,7 +93559,6 @@ Body:
       else {
          bonus2 bAddSize,Size_All,3;
       }
-
   - Id: 24486
     AegisName: S_Tigercannon_Pendant
     Name: Tiger Shadow Pendant
@@ -93521,7 +93575,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillAtk,"SR_TIGERCANNON",5+2*(getrefine()/2);
-
   - Id: 24487
     AegisName: S_Tigercannon_Earing
     Name: Tiger Shadow Earring
@@ -93538,7 +93591,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillUseSPrate,"SR_TIGERCANNON",2+(getrefine()/2);
-
   - Id: 24488
     AegisName: S_Duplelight_Armor
     Name: Duplex Shadow Armor
@@ -93555,7 +93607,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillAtk,"AB_DUPLELIGHT",5+2*(getrefine()/2);
-
   - Id: 24489
     AegisName: S_Duplelight_Shield
     Name: Duplex Shadow Shield
@@ -93584,7 +93635,6 @@ Body:
          bonus2 bAddSize,Size_All,1;
          bonus2 bMagicAtkEle,Ele_Holy,1;
       }
-
   - Id: 24490
     AegisName: S_Duplelight_Shoes
     Name: Duplex Shadow Shoes
@@ -93601,7 +93651,6 @@ Body:
     Refineable: true
     Script: |
       bonus bCritAtkRate,5+(getrefine()/2);
-
   - Id: 24491
     AegisName: S_Adoramus_Weapon
     Name: Adora Shadow Weapon
@@ -93627,7 +93676,6 @@ Body:
       else {
          bonus2 bMagicAtkEle,Ele_Holy,3;
       }
-
   - Id: 24492
     AegisName: S_Adoramus_Pendant
     Name: Adora Shadow Pendant
@@ -93644,7 +93692,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillAtk,"AB_ADORAMUS",5+2*(getrefine()/2);
-
   - Id: 24493
     AegisName: S_Adoramus_Earing
     Name: Adora Shadow Earring
@@ -93661,7 +93708,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillUseSPrate,"AB_ADORAMUS",2+(getrefine()/2);
-
   - Id: 24494
     AegisName: S_Judex_Armor
     Name: Judex Shadow Armor
@@ -93678,7 +93724,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillAtk,"AB_JUDEX",5+2*(getrefine()/2);
-
   - Id: 24495
     AegisName: S_Judex_Shield
     Name: Judex Shadow Shield
@@ -93704,7 +93749,6 @@ Body:
       else {
          bonus2 bMagicAtkEle,Ele_Holy,3;
       }
-
   - Id: 24496
     AegisName: S_Judex_Shoes
     Name: Judex Shadow Shoes
@@ -93721,7 +93765,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bMagicAddSize,Size_All,3+2*(getrefine()/3);
-
   - Id: 24497
     AegisName: S_Magnus_Weapon
     Name: Magnus Shadow Weapon
@@ -93747,7 +93790,6 @@ Body:
       else {
          bonus2 bMagicAtkEle,Ele_Holy,3;
       }
-
   - Id: 24498
     AegisName: S_Magnus_Pendant
     Name: Magnus Shadow Pendant
@@ -93764,7 +93806,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillAtk,"PR_MAGNUS",5+2*(getrefine()/2);
-
   - Id: 24499
     AegisName: S_Magnus_Earing
     Name: Magnus Shadow Earring
@@ -93781,7 +93822,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillUseSPrate,"PR_MAGNUS",2+(getrefine()/2);
-
   - Id: 24500
     AegisName: S_Rainstorm_Armor
     Name: Rainstorm Shadow Armor
@@ -93798,7 +93838,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",5+2*(getrefine()/2);
-
   - Id: 24501
     AegisName: S_Rainstorm_Shield
     Name: Rainstorm Shadow Shield
@@ -93824,7 +93863,6 @@ Body:
       else {
          bonus bLongAtkRate,3;
       }
-
   - Id: 24502
     AegisName: S_Rainstorm_Shoes
     Name: Rainstorm Shadow Shoes
@@ -93841,7 +93879,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillUseSPrate,"WM_SEVERE_RAINSTORM",2+(getrefine()/2);
-
   - Id: 24503
     AegisName: S_Arrowvulcan_Weapon
     Name: Arrow Vulcan Shadow Weapon
@@ -93867,7 +93904,6 @@ Body:
       else {
          bonus bLongAtkRate,3;
       }
-
   - Id: 24504
     AegisName: S_Arrowvulcan_Pendant
     Name: Arrow Vulcan Shadow Pendant
@@ -93884,7 +93920,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillAtk,"CG_ARROWVULCAN",5+2*(getrefine()/2);
-
   - Id: 24505
     AegisName: S_Arrowvulcan_Earing
     Name: Arrow Vulcan Shadow Earring
@@ -93901,7 +93936,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillCooldown,"CG_ARROWVULCAN",-200-100*(getrefine()/3);
-
   - Id: 24506
     AegisName: S_Metalic_Armor
     Name: Metallic Shadow Armor
@@ -93918,7 +93952,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillAtk,"WM_METALICSOUND",5+2*(getrefine()/2);
-
   - Id: 24507
     AegisName: S_Metalic_Shield
     Name: Metallic Shadow Shield
@@ -93944,7 +93977,6 @@ Body:
       else {
          bonus2 bMagicAtkEle,Ele_Neutral,3;
       }
-
   - Id: 24508
     AegisName: S_Metalic_Shoes
     Name: Metallic Shadow Shoes
@@ -93961,7 +93993,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillUseSPrate,"WM_METALICSOUND",2+(getrefine()/2);
-
   - Id: 24509
     AegisName: S_Reverberation_Weapon
     Name: Vibrating Shadow Weapon
@@ -93987,7 +94018,6 @@ Body:
       else {
          bonus2 bMagicAtkEle,Ele_Neutral,3;
       }
-
   - Id: 24510
     AegisName: S_Reverberation_Pendant
     Name: Vibration Shadow Pendant
@@ -94004,7 +94034,6 @@ Body:
     Refineable: true
     Script: |
       bonus2 bSkillAtk,"WM_REVERBERATION",5+2*(getrefine()/2);
-
   - Id: 24511
     AegisName: S_Reverberation_Earing
     Name: Vibration Shadow Earring
@@ -108696,13 +108725,12 @@ Body:
     AegisName: aegis_31737
     Name: Costume Lucifer's Wings
     Type: Armor
-    View: 55
     Jobs:
       All: true
       Novice: false
     Locations:
       Costume_Garment: true
-
+    View: 55
   - Id: 31762
     AegisName: Costume_Gambler_Card
     Name: C Heart Card in Mouth
@@ -109373,7 +109401,6 @@ Body:
     View: 2001
     Locations:
       Costume_Head_Mid: true
-
   - Id: 31932
     AegisName: aegis_31932
     Name: Costume suit lapel    # !todo check english name
@@ -109381,7 +109408,6 @@ Body:
     View: 2002
     Locations:
       Costume_Head_Low: true
-
   - Id: 31933
     AegisName: aegis_31933
     Name: Costume Miyabi Doll Long Hair (Light Purple)
@@ -109389,7 +109415,6 @@ Body:
     View: 2003
     Locations:
       Costume_Head_Low: true
-
   - Id: 31934
     AegisName: aegis_31934
     Name: Costume Blinking Purple Eyes
@@ -109397,7 +109422,6 @@ Body:
     View: 2004
     Locations:
       Costume_Head_Mid: true
-
   - Id: 31936
     AegisName: aegis_31936
     Name: Costume Honeynut Donut
@@ -109405,7 +109429,6 @@ Body:
     View: 736
     Locations:
       Costume_Head_Low: true
-
   - Id: 31937
     AegisName: aegis_31937
     Name: Costume unicorn headdress    # !todo check english name
@@ -109413,7 +109436,6 @@ Body:
     View: 2006
     Locations:
       Costume_Head_Top: true
-
   - Id: 31938
     AegisName: aegis_31938
     Name: Costume Loose Knitting Twin
@@ -109421,7 +109443,6 @@ Body:
     View: 2007
     Locations:
       Costume_Head_Low: true
-
   - Id: 31943
     AegisName: aegis_31943
     Name: Costume tree frog hoodies    # !todo check english name
@@ -109429,7 +109450,6 @@ Body:
     View: 2010
     Locations:
       Costume_Head_Top: true
-
   - Id: 31944
     AegisName: aegis_31944
     Name: Costume Elegant Wave
@@ -109437,7 +109457,13 @@ Body:
     View: 2011
     Locations:
       Costume_Head_Low: true
-
+  - Id: 31945
+    AegisName: C_Angel_Hairband
+    Name: Costume Angel Hairband
+    Type: Armor
+    View: 1104
+    Locations:
+      Costume_Head_Top: true
   - Id: 32004
     AegisName: Probation_Lance
     Name: Trial Royal Guard's Lance

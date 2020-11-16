@@ -2005,6 +2005,7 @@
 19098:28901,{ .@r_top = getequiprefinerycnt(EQI_HEAD_TOP); .@r_left = getequiprefinerycnt(EQI_HAND_L); autobonus "{ bonus2 bHPLossRate,50,1000; }",1+.@r_top,3000+.@r_left*1000,BF_WEAPON|BF_MAGIC,"{ active_transform 1930,3000" + (.@r_left*1000) + "; /*PIAMETTE, unknown effect*/ }"; }
 19098:28902,{ .@r_top = getequiprefinerycnt(EQI_HEAD_TOP); .@r_left = getequiprefinerycnt(EQI_HAND_L); autobonus "{ bonus2 bHPLossRate,50,1000; }",1+.@r_top,3000+.@r_left*1000,BF_WEAPON|BF_MAGIC,"{ active_transform 1930,3000" + (.@r_left*1000) + "; /*PIAMETTE, unknown effect*/ }"; }
 19218:28511,{ bonus2 bAddItemHealRate,569,20; }
+19221:20841,{ bonus bAllstats,1; }
 19243:20842,{ bonus bAspdRate,5; }
 19243:20843,{ bonus2 bAddClass,Class_All,4; if (getequiprefinerycnt(EQI_GARMENT)>=12) { bonus bAllStats,1; } }
 19243:20844,{ bonus bVariableCastrate,-5; }
